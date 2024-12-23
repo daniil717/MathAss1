@@ -7,7 +7,7 @@ def f_prime(x):
 
 def secant_method(x0, x1, max_iter):
     results = [x0, x1]
-    for _ in range(max_iter - 2):  # Уже есть x0 и x1
+    for _ in range(max_iter - 2):
         x2 = x1 - f(x1) * (x1 - x0) / (f(x1) - f(x0))
         results.append(x2)
         x0, x1 = x1, x2

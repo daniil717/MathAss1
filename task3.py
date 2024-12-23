@@ -7,6 +7,7 @@ def f(x):
 def f_prime(x):
     return 3*x**2 - 1
 
+# xk+1 = xk - f(xk) * (xk - xk-1)/(f(xk) - f(xk-1))
 def secant_method(x0, x1, tol, max_iter):
     results = []
     for _ in range(max_iter):
@@ -17,6 +18,7 @@ def secant_method(x0, x1, tol, max_iter):
         x0, x1 = x1, x2
     return x1, results
 
+# xk+1 = g(xk)
 def iteration_method(x0, tol, max_iter):
     g = lambda x: (x + 1)**(1/3)
     results = []
@@ -28,6 +30,7 @@ def iteration_method(x0, tol, max_iter):
         x0 = x1
     return x1, results
 
+# xk+1 = xk - f(xk)/f'(xk)
 def newton_raphson_method(x0, tol, max_iter):
     results = []
     for _ in range(max_iter):

@@ -3,7 +3,7 @@ import math
 def f(x):
     return math.exp(x) - x ** 2
 
-
+# с = (a + b) / 2
 def bisection_method(a, b, tol, max_iter):
     if f(a) * f(b) >= 0:
         return None
